@@ -59,10 +59,11 @@ export default {
       this.loading = true
       this.timer = setInterval(() => {
         this.percentage += 5
+        console.log(this.percentage)
         if (this.percentage >= 100) {
           this.percentage = 80
         }
-      }, 5)
+      }, 100)
 
       var container = document.getElementById('container')
       photoWrap = document.getElementById('photoWrap')
@@ -220,6 +221,7 @@ export default {
     this.error = false
     this.errMsg = ''
     cancelAnimationFrame(this.animate)
+    this.timer && clearInterval(this.timer)
   }
 }
 </script>
